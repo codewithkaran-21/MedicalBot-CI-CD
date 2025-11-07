@@ -1,0 +1,22 @@
+How the Agent Works
+
+The MedicalBot Agent is a Retrieval-Augmented Generation (RAG) system built using LangGraph, LangChain, and Google Gemini as the LLM. The architecture follows a multi-node workflow:
+
+User Input → Plan Node: Interprets the user’s medical query.
+
+Retrieve Node: Fetches the most relevant context chunks from Pinecone using Sentence Transformer embeddings.
+
+Answer Node: Generates a medically sound answer using the LLM and retrieved context.
+
+Reflect Node: Validates whether the generated answer is relevant and consistent with the user’s question.
+
+The final response includes both the answer and a reflection step, where the LLM checks its own reasoning for medical accuracy and relevance.
+
+
+Challenges Faced
+
+Ensuring LangGraph nodes passed state correctly required defining a valid state_schema (to avoid the Must provide state_schema error).
+
+Managing overlapping node names (e.g., "answer" as both key and node label) caused conflicts.
+
+Maintaining proper formatting (line breaks, readability) in Flask responses from the LLM output.
