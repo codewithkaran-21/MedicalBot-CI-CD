@@ -6,6 +6,7 @@ langchain_google_genai==4.4.2
 langchain_pinecone==0.2.13
 langchain_text_splitters==1.1.3
 langchain-huggingface
+sentence-transformers
 langgraph==1.2.16
 pinecone>=6.0.0,<8.0.0
 pydantic==2.14.1
