@@ -249,6 +249,10 @@ web: gunicorn src.app:app
 
 You can deploy it in a platform that supports Gunicorn, such as Render, Heroku, or similar providers.
 
+For Render, use `pip install -r requirements.txt` as the build command and ensure
+`GOOGLE_API_KEY` and `PINECONE_API_KEY` are configured as environment variables.
+The Pinecone `medibot` index must already exist before the web service starts.
+
 ---
 
 ## Web interface
